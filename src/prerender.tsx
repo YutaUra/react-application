@@ -5,7 +5,7 @@ import { Router } from "wouter";
 import { App } from "./app/_app";
 
 const renderToStringAsync = (children: ReactNode) => {
-	return new Promise((resolve, reject) => {
+	return new Promise<string>((resolve, reject) => {
 		const stream = renderToPipeableStream(children, {
 			onError(error, errorInfo) {
 				console.error(error, errorInfo);
@@ -13,9 +13,14 @@ const renderToStringAsync = (children: ReactNode) => {
 			},
 			async onAllReady() {
 				const passthrough = new PassThrough();
-				const html = stream.pipe(passthrough);
-				for await (const element of passthrough) {
-					console.log(element);
+				stream.pipe(passthrough);
+				let html = "";
+				for await (const chunk of passthrough) {
+					if (chunk instanceof Buffer) {
+						html += chunk.toString("utf8");
+					} else {
+						throw new Error("Unexpected stream element");
+					}
 				}
 				resolve(html);
 			},

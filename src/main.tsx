@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { App } from "./app/_app";
 
 const container = document.getElementById("app");
@@ -8,4 +8,8 @@ if (!container) {
 	);
 }
 
-createRoot(container).render(<App />);
+if (import.meta.env.SSR) {
+	hydrateRoot(container, <App />);
+} else {
+	createRoot(container).render(<App />);
+}

@@ -1,7 +1,10 @@
 {
 	"extends": "@tsconfig/strictest",
 	"compilerOptions": {
-		"composite": true
+		"composite": true,
+		"jsx": "preserve",
+		"moduleResolution": "bundler",
+		"module": "ESNext"
 	},
-	"include": ["vite.config.ts"]
+	"include": ["vite.config.ts", "tools", "src"]
 }

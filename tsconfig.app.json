@@ -5,7 +5,9 @@
 		"jsx": "preserve",
 		"moduleResolution": "bundler",
 		"module": "ESNext",
-		"target": "ESNext"
+		"target": "ESNext",
+		"types": ["vite/client"]
 	},
-	"include": ["src"]
+	"include": ["src"],
+	"exclude": ["src/prerender.tsx"]
 }
