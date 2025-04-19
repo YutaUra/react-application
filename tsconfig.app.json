@@ -1,0 +1,10 @@
+{
+	"extends": "@tsconfig/strictest",
+	"compilerOptions": {
+		"composite": true,
+		"jsx": "preserve",
+		"moduleResolution": "bundler",
+		"module": "ESNext"
+	},
+	"include": ["src"]
+}
