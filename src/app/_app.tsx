@@ -1,6 +1,8 @@
+import { lazy } from "react";
 import { Route, Switch } from "wouter";
-import { Index } from "./index";
-import { Sample } from "./sample";
+
+const Index = lazy(() => import("./index"));
+const Sample = lazy(() => import("./sample"));
 
 export const App = () => {
 	return (

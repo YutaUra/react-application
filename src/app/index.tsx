@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 
-export const Index = () => {
+const Index = () => {
 	return (
 		<div>
 			<h1>This is a Index Page</h1>
@@ -9,3 +9,5 @@ export const Index = () => {
 		</div>
 	);
 };
+
+export default Index;

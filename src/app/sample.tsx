@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 
-export const Sample = () => {
+const Sample = () => {
 	return (
 		<div>
 			<h1>This is a Sample Page</h1>
@@ -9,3 +9,5 @@ export const Sample = () => {
 		</div>
 	);
 };
+
+export default Sample;
