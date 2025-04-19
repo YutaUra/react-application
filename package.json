@@ -1,7 +1,14 @@
 {
   "name": "react-application",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
   "author": "YutaUra",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@10.8.1",
+  "devDependencies": {
+    "vite": "6.3.2"
+  }
 }
